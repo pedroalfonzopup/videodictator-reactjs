@@ -1,0 +1,24 @@
+.ItemListContainer {
+    background-color: rgb(8, 8, 8);
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    ". greet ."
+    ". . ."
+    ;
+}
+
+.greet-container {
+    grid-area: greet;
+}
+
+.greet-container h1 {
+    text-align: center;
+    font-family: monospace;
+    padding: 40px;
+
+}

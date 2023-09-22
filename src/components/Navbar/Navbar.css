@@ -1,0 +1,45 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px;
+}
+
+.navbar-items_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar-list_container {
+    display: flex;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    list-style-type: none;
+}
+
+.dalelococortala {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white; 
+}
+
+
+
