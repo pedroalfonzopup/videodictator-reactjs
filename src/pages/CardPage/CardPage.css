@@ -1,0 +1,27 @@
+.detail-main {
+    background-color: rgb(8, 8, 8);
+
+    display: grid;
+
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". item . ."
+    ". item . ."
+    ". . . ."
+    ;
+}
+
+.item-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+}
+
+.specific-item {
+    width: 200px;
+
+    grid-area: item;
+}
