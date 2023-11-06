@@ -1,7 +1,20 @@
 import "./CardSelected.css"
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/cartContext"
+import { useContext, useState } from "react"
+import ItemCount from '../ItemCount/ItemCount';
 
-const CardSelected = ( {game} ) => {
-    const { img, company, name, console, genre } = game
+const CardSelected = ( { id, img, company, name, console, genre, stock, price } ) => {
+    const [quantity, setQuantity] = useState(0)
+    const { addItem, getProductQuantity } = useContext(CartContext)
+    
+    const originalQuantity = getProductQuantity(id)
+    
+    const addProduct = (quantity) => {
+        setQuantity(quantity)
+        addItem({id, name, price, quantity})
+    }
+
     return (
         <div className="card-selected-container">
             <div className="card-selected-portrait">
@@ -21,6 +34,10 @@ const CardSelected = ( {game} ) => {
                     {console}
                 </h6>
                 
+            </div>
+
+            <div>
+            { quantity > 0 ? <Link to='/cart' className="button_detalle">Ir al carrito</Link> : <ItemCount stock={stock} initial={originalQuantity} onAdd={addProduct}/>}
             </div>
         </div>
     )

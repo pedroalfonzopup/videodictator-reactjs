@@ -8,25 +8,28 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage"
 import CardPage from "./pages/CardPage/CardPage"
 import MyFooter from "./components/MyFooter/MyFooter"
 import ShopPage from "./pages/ShopPage/ShopPage"
-import CartList from "./pages/CartList/CartList"
+import { CartContextProvider } from "./context/cartContext"
+import CartContainer from './components/CartContainer/CartContainer';
 
 
 const App = () => {
 
   return (
-    <Router>
-      <MyNavbar />
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/contact" element={<ContactPage/>} />
-        <Route path="/about" element={<AboutPage/>} />
-        <Route path="/selected/:id" element={<CardPage/>} />
-        <Route path="/category/:categoryId" element={<CategoryPage />} />
-        <Route path="/shopping" element={<ShopPage />} />
-        <Route path="/cart" element={<CartList />} />
-      </Routes>
-      <MyFooter />
-    </Router>
+    <CartContextProvider>
+      <Router>
+        <MyNavbar />
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/contact" element={<ContactPage/>} />
+            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/selected/:id" element={<CardPage/>} />
+            <Route path="/category/:categoryId" element={<CategoryPage />} />
+            <Route path="/shopping" element={<ShopPage />} />
+            <Route path="/cart" element={<CartContainer />}/>
+          </Routes>
+        <MyFooter />
+      </Router>
+    </CartContextProvider>
   )
 }
 

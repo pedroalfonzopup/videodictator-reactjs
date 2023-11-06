@@ -29,7 +29,7 @@ const CardPage = () => {
         <div className="specific-item">
           <div className="item-detail">
             {gameData.map((game) => {
-              return <CardSelected game={game} key={game.id}/>
+              return <CardSelected {...game} key={game.id}/>
             })}
           </div>
         </div>

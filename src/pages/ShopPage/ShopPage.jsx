@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import "./ShopPage.css"
 import TextField from "@mui/material/TextField";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import MessageSuccess from "../../components/MessageSuccess/MessageSuccess";
+import { CartContext } from "../../context/cartContext"
 
 
 const initialState = {
@@ -15,7 +16,11 @@ const initialState = {
 const ShopPage = () => {
     const [values, setValues] = useState(initialState);
     const [purchaseID, setPurchaseID] = useState("");
+    const { cart, clearCart } = useContext(CartContext)
+
   
+  
+
     const handleOnChange = (e) => {
       const { value, name } = e.target;
       setValues({ ...values, [name]: value });
@@ -24,7 +29,7 @@ const ShopPage = () => {
     const handleOnSubmit = async (e) => {
       e.preventDefault();
       const docRef = await addDoc(collection(db, "purchases"), {
-        values,
+        values, cart
       });
       setValues(initialState);
       setPurchaseID(docRef.id);
