@@ -3,12 +3,12 @@
 
     display: grid;
 
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    ". item . ."
-    ". item . ."
-    ". . . ."
+    ". item ."
+    ". item ."
+    ". . ."
     ;
 }
 
@@ -18,10 +18,12 @@
     align-items: center;
 
     margin: 10px;
+    
 }
 
 .specific-item {
     width: 200px;
 
+    
     grid-area: item;
 }

@@ -28,17 +28,20 @@ const MyNavbar = () => {
               <li>
                 Categories
                 <ul>
-                  <Link to="/category/Alive">
-                  <li>Alive</li>
+                  <Link to="/category/Nintendo">
+                  <li>Nintendo</li>
                   </Link>
-                  <Link to="/category/Dead">
-                  <li>Dead</li>
+                  <Link to="/category/Sony">
+                  <li>Sony</li>
                   </Link>
-                  <Link to="/category/unknown">
-                  <li>Unknown</li>
+                  <Link to="/category/XBOX">
+                  <li>XBOX</li>
                   </Link>
                 </ul>
               </li>
+              <Link to="/shopping">
+                <li>Shopping</li>
+              </Link>
             </ul>
         </div>
       </Navbar>

@@ -1,18 +1,21 @@
 import "./CardUser.css"
 
-const CardUser = ( {char} ) => {
-    const { image, name, species, status } = char
+const CardUser = ( {games} ) => {
+    const { img, name, company, genre, console } = games
     return (
         <div className="card">
-            <img src={image} alt={name} className="card-img" />
+            <img src={img} alt={name} className="card-img" />
             <h5 className="card-name">
                 {name}
             </h5>
-            <h6 className="card-species">
-                {species}
+            <h5 className="card-name">
+                {genre}
+            </h5>
+            <h6 className="card-company">
+                {company}
             </h6>
-            <h6 className="card-status">
-                {status}
+            <h6 className="card-console">
+                {console}
             </h6>
         </div>
     )

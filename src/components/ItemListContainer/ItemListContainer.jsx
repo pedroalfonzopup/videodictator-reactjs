@@ -1,28 +1,37 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
+import { db } from "../../firebase/firebaseConfig"
+import { collection, query, getDocs } from "firebase/firestore"
 import "./ItemListContainer.css"
 import CardUser from "../CardUser/CardUser"
 import { Link } from "react-router-dom"
 
 
 const ItemListContainer = () => {
-    const [chars, setChars] = useState([])
+    const [games, setGames] = useState([])
 
     useEffect(() => {
-        axios("https://rickandmortyapi.com/api/character"
-        ).then((res) =>
-            setChars(res.data.results)) 
+        const getGames = async () => {
+            const q = query(collection(db, "games"))
+            const querySnapshot = await getDocs(q)
+            const docs = []
+            querySnapshot.forEach((doc) => {
+                docs.push({...doc.data(), id: doc.id})
+
+            })
+            setGames(docs)
+        }
+        getGames()
     }, [])
 
     return (
         <div className="main">
             <div className="items-main">
                 <div className="items-container">
-                    {chars.map((char) => {
+                    {games.map((games) => {
                         return (
-                        <div className="item" key={char.id}>
-                            <Link to={`/selected/${char.id}`}>
-                                <CardUser char={char} />
+                        <div className="item" key={games.id}>
+                            <Link to={`/selected/${games.id}`}>
+                                <CardUser games={games} />
                             </Link>
                         </div>
                         );

@@ -7,7 +7,8 @@ import ContactPage from "./pages/ContactPage/ContactPage"
 import CategoryPage from "./pages/CategoryPage/CategoryPage"
 import CardPage from "./pages/CardPage/CardPage"
 import MyFooter from "./components/MyFooter/MyFooter"
-
+import ShopPage from "./pages/ShopPage/ShopPage"
+import CartList from "./pages/CartList/CartList"
 
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/about" element={<AboutPage/>} />
         <Route path="/selected/:id" element={<CardPage/>} />
         <Route path="/category/:categoryId" element={<CategoryPage />} />
+        <Route path="/shopping" element={<ShopPage />} />
+        <Route path="/cart" element={<CartList />} />
       </Routes>
       <MyFooter />
     </Router>
