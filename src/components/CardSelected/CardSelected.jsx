@@ -36,7 +36,7 @@ const CardSelected = ( { id, img, company, name, console, genre, stock, price } 
                 
             </div>
 
-            <div>
+            <div className="button-select-quantity">
             { quantity > 0 ? <Link to='/cart' className="button_detalle">Ir al carrito</Link> : <ItemCount stock={stock} initial={originalQuantity} onAdd={addProduct}/>}
             </div>
         </div>

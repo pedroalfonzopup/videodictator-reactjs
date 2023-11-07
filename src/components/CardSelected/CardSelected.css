@@ -1,0 +1,37 @@
+.card-selected-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+    margin: 10px;
+
+    background-color: rgba(0, 0, 0, 0.733);
+    border-radius: 3%;
+}
+
+.card-selected-portrait {
+    width: 200px;
+}
+
+.card-selected-portrait img {
+    width: 100%;
+}
+
+.card-selected-info {
+    background-color: rgb(12, 12, 12);
+    padding: 30px;
+    width: 200px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-select-quantity {
+    padding: 10px;
+}

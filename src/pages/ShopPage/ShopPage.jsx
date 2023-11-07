@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import "./ShopPage.css"
 import TextField from "@mui/material/TextField";
-import { collection, addDoc } from "firebase/firestore";
+import { addDoc, collection, getDocs, Timestamp, query, where, documentId, writeBatch} from 'firebase/firestore'
 import { db } from "../../firebase/firebaseConfig";
 import MessageSuccess from "../../components/MessageSuccess/MessageSuccess";
 import { CartContext } from "../../context/cartContext"
@@ -31,6 +31,29 @@ const ShopPage = () => {
       const docRef = await addDoc(collection(db, "purchases"), {
         values, cart
       });
+
+      const dbRef = collection(db, 'games')
+      const noStock = [] 
+      const cartIds = cart.map(product => product.id)
+      const myBatch = writeBatch(db)
+      const productosAAñadir = await getDocs(query(dbRef, where(documentId(), "in", cartIds)))
+      const { docs } = productosAAñadir
+      docs.forEach(prod => {
+        const data = prod.data()
+        const dataBaseStock = data.stock
+        const products = cart.find(doc => doc.id === prod.id)
+        const prodQuantity = products?.quantity
+        if(dataBaseStock >= prodQuantity){
+          myBatch.update(prod.ref, {stock: dataBaseStock - prodQuantity})
+        }else {
+          noStock.push({id: prod.id, ...data})
+          }
+      }) 
+
+      if(noStock.length === 0){
+        myBatch.commit()
+      }
+
       setValues(initialState);
       setPurchaseID(docRef.id);
     };

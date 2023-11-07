@@ -1,0 +1,33 @@
+.buttonDisabled {
+    cursor: not-allowed;
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+.buttonDisabled:hover {
+    cursor: not-allowed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.count {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.count button {
+    color: black;
+    width: 30px;
+}
+
+.add-to-cart button {
+    color: black;
+}
