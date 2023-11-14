@@ -5,7 +5,7 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 const HomePage = () => {
   return (
     <div className="page-titles">
-      <h1>This is the Home Page!!!</h1>
+      <h1>Welcome to VideoDictator</h1>
       <ItemListContainer/>
     </div>
   )
