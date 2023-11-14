@@ -11,7 +11,7 @@ const MyNavbar = () => {
       <Navbar className='navbar-items_container'>
         <Link to="/">
           <Container>
-            <Navbar.Brand>VIDEO DICTATOR</Navbar.Brand>
+            <h1>VIDEODICTATOR</h1>
           </Container>
         </Link>
         <div className='navbar-list_container'>

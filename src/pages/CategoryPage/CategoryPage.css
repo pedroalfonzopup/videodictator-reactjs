@@ -23,10 +23,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    
+    gap: 40px;
+    padding: 10px;
 }
 
 .item {
-    width: 150px;
+    width: 180px;
+    padding: 10px;
+    height: 280px;
+
+    display: flex;
+    flex-shrink: 1;
+}
+
+.item img {
+    height: 150px;
+    width: 180px;
 }

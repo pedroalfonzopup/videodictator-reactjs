@@ -59,12 +59,12 @@ const ShopPage = () => {
     };
 
     return (
-        <div>
+        <div className="main-shoppage">
           <h1>Shop</h1>
           <form className="FormContainer" onSubmit={handleOnSubmit}>
             <TextField
                 placeholder="Name"
-                style={{ margin: 10, width: 400 }}
+                style={{ margin: 10, width: 400, }}
                 name="name"
                 value={values.name}
                 onChange={handleOnChange}

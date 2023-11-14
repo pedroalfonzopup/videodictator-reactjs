@@ -1,0 +1,22 @@
+.main-shoppage {
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgb(190, 190, 190);
+    padding: 20px;
+    margin: 20px;
+}
+
+.btnASendAction {
+    background-color: black;
+}
